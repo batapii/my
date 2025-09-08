@@ -22,12 +22,16 @@ body{
   line-height:1.7;
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
+  overflow-x:hidden; /* モバイル横スクロール抑止（根本原因も別途対処） */
 }
 
 .container{
   width:min(1100px, 92vw);
   margin-inline:auto;
+  padding-inline: clamp(16px, 4vw, 24px); /* 端詰まり防止 */
 }
+
+img, video, canvas, svg{max-width:100%; height:auto; display:block}
 
 a{color:var(--primary)}
 a:hover{color:var(--primary-2)}
@@ -42,9 +46,9 @@ a:hover{color:var(--primary-2)}
   display:flex; align-items:center; justify-content:space-between;
   height:64px;
 }
-.brand{display:flex; align-items:center; gap:.6rem; text-decoration:none; color:var(--text); font-weight:700}
+.brand{display:flex; align-items:center; gap:.6rem; text-decoration:none; color:var(--text); font-weight:700; min-width:0}
 .brand-mark{display:inline-grid; place-items:center; width:28px; height:28px; background:linear-gradient(135deg, var(--primary), var(--accent)); color:#0b0f20; border-radius:6px; font-size:18px}
-.brand-text{letter-spacing:.3px}
+.brand-text{letter-spacing:.3px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
 
 .site-nav a{
   color:var(--text); text-decoration:none; margin-left:1rem; padding:.4rem .6rem; border-radius:8px;
@@ -91,10 +95,10 @@ a:hover{color:var(--primary-2)}
 .section-head{display:flex; flex-direction:column; gap:.6rem; margin-bottom:1rem}
 .section-head h2{margin:0}
 .section-desc{color:var(--muted); margin:0}
-.chips{display:flex; gap:.5rem; list-style:none; padding:0; margin:1rem 0 0}
+.chips{display:flex; gap:.5rem; list-style:none; padding:0; margin:1rem 0 0; flex-wrap:wrap}
 .chips li{padding:.35rem .6rem; border:1px solid var(--border); border-radius:999px; color:var(--muted); background:rgba(255,255,255,0.03)}
 
-.filters{display:flex; gap:.5rem; margin-top:.6rem}
+.filters{display:flex; gap:.5rem; margin-top:.6rem; flex-wrap:wrap}
 .filter-btn{
   padding:.5rem .8rem; border-radius:999px; border:1px solid var(--border);
   background:transparent; color:var(--text); cursor:pointer;
@@ -122,13 +126,21 @@ a:hover{color:var(--primary-2)}
   border-radius:12px; background:linear-gradient(135deg, rgba(106,167,255,.25), rgba(143,210,255,.18));
   aspect-ratio: 16/9; display:block; width:100%;
 }
-.card-title{font-weight:700; margin:.2rem 0 0; font-size: 1.05rem}
-.card-desc{color:var(--muted); margin:0}
+.card-title{
+  font-weight:700; margin:.2rem 0 0; font-size: 1.05rem;
+  overflow-wrap:anywhere; word-break:break-word;
+}
+.card-desc{
+  color:var(--muted); margin:0;
+  overflow-wrap:anywhere; word-break:break-word;
+}
 .badges{display:flex; gap:.4rem; flex-wrap:wrap; margin-top:.2rem}
 .badge{font-size:.8rem; color:var(--primary-2); background:rgba(106,167,255,0.1); border:1px solid rgba(143,210,255,0.2); padding:.2rem .5rem; border-radius:999px}
 
 .card-actions{display:flex; gap:.5rem; margin-top:.4rem; flex-wrap:wrap}
 .card-actions .btn{padding:.45rem .6rem; font-size:.92rem}
+
+.contact-links{display:flex; gap:.6rem; flex-wrap:wrap}
 
 .muted{color:var(--muted)}
 
@@ -137,4 +149,16 @@ a:hover{color:var(--primary-2)}
   padding:20px 0;
   background: rgba(10,14,34,0.5);
 }
-.footer-inner{display:flex; align-items:center; justify-content:space-between}
+.footer-inner{display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:.5rem}
+
+/* 追加のモバイル最適化 */
+@media (max-width: 640px){
+  .site-nav{display:none} /* 簡易対応: ナビは非表示（必要なら後でハンバーガーに） */
+  .avatar{width:120px; height:120px}
+  .hero{padding: 36px 0}
+}
+
+/* とても狭い画面向けの微調整 */
+@media (max-width: 360px){
+  .brand-text{display:none}
+}

@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ポートフォリオ | あなたの名前</title>
+  <meta name="description" content="Webサイトとモバイルアプリの制作事例を掲載したポートフォリオです。" />
+  <meta property="og:title" content="ポートフォリオ | あなたの名前" />
+  <meta property="og:description" content="Webサイトとモバイルアプリの制作事例を掲載したポートフォリオです。" />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <script defer src="assets/js/main.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#">
+        <span class="brand-mark" aria-hidden="true">◆</span>
+        <span class="brand-text">Your Portfolio</span>
+      </a>
+      <nav class="site-nav" aria-label="メイン">
+        <a href="#portfolio">作品</a>
+        <a href="#about">プロフィール</a>
+        <a href="#contact">連絡先</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="hero" class="hero">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <h1 id="owner-name">あなたの名前</h1>
+          <p id="owner-role" class="subtitle">フロントエンド / モバイルエンジニア</p>
+          <p id="owner-intro">
+            Webサイトとモバイルアプリの開発が得意です。使いやすさとパフォーマンスにこだわったプロダクトを制作します。
+          </p>
+          <div class="hero-cta">
+            <a class="btn primary" href="#portfolio">作品を見る</a>
+            <a class="btn ghost" href="#contact">連絡する</a>
+          </div>
+        </div>
+        <div class="hero-media" aria-hidden="true">
+          <div class="avatar">Y</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="portfolio" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>作品一覧</h2>
+          <p class="section-desc">クリックすると各作品のページ（外部サイト）に移動します。</p>
+          <div class="filters" role="tablist" aria-label="カテゴリー">
+            <button class="filter-btn active" role="tab" aria-selected="true" data-filter="web">Webサイト</button>
+            <button class="filter-btn" role="tab" aria-selected="false" data-filter="mobile">モバイルアプリ</button>
+            <button class="filter-btn" role="tab" aria-selected="false" data-filter="all">すべて</button>
+          </div>
+        </div>
+        <div id="portfolio-grid" class="grid" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section id="about" class="section alt">
+      <div class="container">
+        <h2>プロフィール</h2>
+        <p>
+          フロントエンド（React/Next.js）、モバイル（Flutter/React Native）、バックエンド（Node.js/Firebase）の開発経験があります。
+          デザインから実装、公開まで一貫して対応可能です。
+        </p>
+        <ul class="chips">
+          <li>TypeScript</li>
+          <li>React</li>
+          <li>Next.js</li>
+          <li>Flutter</li>
+          <li>Node.js</li>
+          <li>Firebase</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container">
+        <h2>連絡先</h2>
+        <p>ご相談・ご依頼は以下からお気軽にどうぞ。</p>
+        <div class="contact-links">
+          <a class="btn" href="mailto:you@example.com" target="_blank" rel="noopener">メール</a>
+          <a class="btn" href="https://github.com/yourname" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn" href="https://www.linkedin.com/in/yourname" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> あなたの名前</span>
+      <span class="muted">Hosted on GitHub Pages</span>
+    </div>
+  </footer>
+</body>
+</html>

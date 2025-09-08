@@ -24,6 +24,15 @@
       "url": "https://batapii.github.io/website/",
       "image": "assets/img/site-icon.png",
       "tags": ["HTML", "CSS", "JavaScript"]
+    },
+    {
+      "id": "batapii-lp-demo",
+      "type": "web",
+      "title": "LP Demo",
+      "description": "単一ページのLPデモサイト。",
+      "url": "https://batapii.github.io/LPDemo/",
+      "image": "assets/img/LPDemo.png",
+      "tags": ["LP", "HTML", "CSS"]
     }
   ]
 }

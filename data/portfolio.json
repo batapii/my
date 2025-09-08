@@ -1,28 +1,10 @@
 {
   "owner": {
-    "name": "あなたの名前",
+    "name": "taishi",
     "role": "フロントエンド / モバイルエンジニア",
     "intro": "UI/UXにこだわったWebサイト・モバイルアプリの開発を行っています。スピーディーかつ丁寧な開発が強みです。"
   },
   "projects": [
-    {
-      "id": "personal-site",
-      "type": "web",
-      "title": "ポートフォリオサイト",
-      "description": "このポートフォリオ自身。GitHub Pagesでホスティング。",
-      "url": "https://yourname.github.io/portfolio",
-      "image": "",
-      "tags": ["HTML", "CSS", "JavaScript", "GitHub Pages"]
-    },
-    {
-      "id": "blog-next",
-      "type": "web",
-      "title": "技術ブログ",
-      "description": "Next.jsで構築した技術ブログ。MDX対応・高速表示。",
-      "url": "https://example.com/blog",
-      "image": "",
-      "tags": ["Next.js", "TypeScript", "Vercel"]
-    },
     {
       "id": "todo-flutter",
       "type": "mobile",
@@ -33,6 +15,15 @@
       "websiteUrl": "https://example.com/todo",
       "image": "",
       "tags": ["Flutter", "Dart", "SQLite"]
+    },
+    {
+      "id": "batapii-website",
+      "type": "web",
+      "title": "ARCLINE STUDIO",
+      "description": "事業内容や実績を紹介するWebサイト。",
+      "url": "https://batapii.github.io/website/",
+      "image": "assets/img/site-icon.png",
+      "tags": ["HTML", "CSS", "JavaScript"]
     }
   ]
 }

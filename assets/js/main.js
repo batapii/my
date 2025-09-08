@@ -82,18 +82,29 @@
 
     // mobile
     const actions = el('div', {class:'card-actions'}, [
-      item.appStoreUrl ? el('a', {class:'btn', href:item.appStoreUrl, target:'_blank', rel:'noopener'}, 'App Store') : null,
-      item.playStoreUrl ? el('a', {class:'btn', href:item.playStoreUrl, target:'_blank', rel:'noopener'}, 'Google Play') : null,
-      item.websiteUrl ? el('a', {class:'btn', href:item.websiteUrl, target:'_blank', rel:'noopener'}, '公式サイト') : null
+      item.appStoreUrl ? el('a', {class:'btn', href:item.appStoreUrl, target:'_blank', rel:'noopener', onclick:(ev)=>ev.stopPropagation()}, 'App Store') : null,
+      item.playStoreUrl ? el('a', {class:'btn', href:item.playStoreUrl, target:'_blank', rel:'noopener', onclick:(ev)=>ev.stopPropagation()}, 'Google Play') : null,
+      item.websiteUrl ? el('a', {class:'btn', href:item.websiteUrl, target:'_blank', rel:'noopener', onclick:(ev)=>ev.stopPropagation()}, '公式サイト') : null
     ].filter(Boolean));
 
-    return el('div', {class:'card', role:'group', 'aria-label': item.title}, [
+    const primaryUrl = item.websiteUrl || item.appStoreUrl || item.playStoreUrl;
+
+    const container = el('div', {
+      class: 'card' + (primaryUrl ? ' clickable' : ''),
+      role: primaryUrl ? 'link' : 'group',
+      'aria-label': item.title,
+      tabindex: primaryUrl ? '0' : undefined,
+      onclick: primaryUrl ? (() => window.open(primaryUrl, '_blank', 'noopener')) : undefined,
+      onkeydown: primaryUrl ? ((e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); window.open(primaryUrl, '_blank', 'noopener'); } }) : undefined
+    }, [
       thumb,
       el('div', {class:'card-title'}, item.title),
       desc,
       badges,
       actions
     ]);
+
+    return container;
   }
 
   function setActiveFilterButton(){

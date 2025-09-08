@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>ポートフォリオ | あなたの名前</title>
+  <title>TAISHI port folio</title>
   <meta name="description" content="Webサイトとモバイルアプリの制作事例を掲載したポートフォリオです。" />
   <meta property="og:title" content="ポートフォリオ | あなたの名前" />
   <meta property="og:description" content="Webサイトとモバイルアプリの制作事例を掲載したポートフォリオです。" />
@@ -12,19 +12,22 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="icon" href="assets/img/site-icon.png" type="image/png" sizes="any" />
+  <link rel="apple-touch-icon" href="assets/img/site-icon.png" />
   <script defer src="assets/js/main.js"></script>
 </head>
 <body>
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="#">
-        <span class="brand-mark" aria-hidden="true">◆</span>
-        <span class="brand-text">Your Portfolio</span>
+        <span class="brand-mark" aria-hidden="true"><img class="brand-mark-img" src="assets/img/site-icon.png" alt="" width="28" height="28" decoding="async" /></span>
+        <span class="brand-text">TAISHI</span>
       </a>
       <nav class="site-nav" aria-label="メイン">
         <a href="#portfolio">作品</a>
         <a href="#about">プロフィール</a>
         <a href="#contact">連絡先</a>
+        <a href="https://your-other-site.example.com" target="_blank" rel="noopener">別サイト</a>
       </nav>
     </div>
   </header>
@@ -41,6 +44,7 @@
           <div class="hero-cta">
             <a class="btn primary" href="#portfolio">作品を見る</a>
             <a class="btn ghost" href="#contact">連絡する</a>
+            <a class="btn" href="https://your-other-site.example.com" target="_blank" rel="noopener">別サイトへ</a>
           </div>
         </div>
         <div class="hero-media" aria-hidden="true">
@@ -68,16 +72,15 @@
       <div class="container">
         <h2>プロフィール</h2>
         <p>
-          フロントエンド（React/Next.js）、モバイル（Flutter/React Native）、バックエンド（Node.js/Firebase）の開発経験があります。
-          デザインから実装、公開まで一貫して対応可能です。
+          フロントエンド（HTML,css,React/Next.js）、モバイル（Kotlin/JetPackCompose）、バックエンド（Node.js/Supabase）の開発経験があります。
         </p>
         <ul class="chips">
           <li>TypeScript</li>
           <li>React</li>
           <li>Next.js</li>
-          <li>Flutter</li>
+          <li>Kotlin</li>
           <li>Node.js</li>
-          <li>Firebase</li>
+          <li>Supabase</li>
         </ul>
       </div>
     </section>
@@ -87,8 +90,8 @@
         <h2>連絡先</h2>
         <p>ご相談・ご依頼は以下からお気軽にどうぞ。</p>
         <div class="contact-links">
-          <a class="btn" href="mailto:you@example.com" target="_blank" rel="noopener">メール</a>
-          <a class="btn" href="https://github.com/yourname" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn" href="batapi3939@gmail.com" target="_blank" rel="noopener">メール</a>
+          <a class="btn" href="https://github.com/batapii" target="_blank" rel="noopener">GitHub</a>
           <a class="btn" href="https://www.linkedin.com/in/yourname" target="_blank" rel="noopener">LinkedIn</a>
         </div>
       </div>
@@ -97,7 +100,7 @@
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <span>© <span id="year"></span> あなたの名前</span>
+      <span>© <span id="year"></span> TAISHI</span>
       <span class="muted">Hosted on GitHub Pages</span>
     </div>
   </footer>

@@ -33,6 +33,15 @@
       "url": "https://batapii.github.io/LPDemo/",
       "image": "assets/img/LPDemo.png",
       "tags": ["LP", "HTML", "CSS"]
+    },
+    {
+      "id": "kopi-bar",
+      "type": "web",
+      "title": "KOPI",
+      "description": "バーのWebサイト。",
+      "url": "https://batapii.github.io/kopi/",
+      "image": "",
+      "tags": ["HTML", "CSS", "JavaScript"]
     }
   ]
 }
